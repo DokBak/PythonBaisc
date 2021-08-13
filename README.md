@@ -2,6 +2,30 @@
 PythonBaisc
 
 작업내용
+
+2021년 8월 13일
+    랜덤 함수(Python_Random.py)
+        랜덤함수를 사용할 때는 (from random import * )로 랜덤모듈을 선언한다.
+        random() : 0 <= X < 1 (0이상 1미만)
+        randrange(a, b) : a <= X < b (a이상 b미만)
+        randint(a,b) : a <= X <= b (a이상 b이하)
+    간단 퀴즈(Python_Quiz2.py)
+        랜덤함수에 사용에 대해 생각해 볼 수 있는 문제
+    문자열 공부(Python_String.py)
+        문자열 선언시 큰 따옴표("), 작은 따옴표(') 어느 것을 사용해도 상관없다. 여러줄 문자열 선언은 같은 따옴표로 3개를 사용하면 된다.
+        변수 뒤에 붙는 경우는 다중 주석으로 인식하지 않는다.
+    슬라이싱 공부(Python_Slicing.py)
+        문자열을 선택해서 원하는 문자열만 추출하는 방법
+        문자열[0:3], 문자열[:4], 문자열[4:7], 문자열[:] ,문자열[-7]
+    문자열 처리 함수(Python_String_Function.py)
+        문자열.lower()
+        문자열.upper()
+        문자열[n].islower()
+        문자열[n].isupper()
+        문자열.replace("변경하려는 문자열","변경된 문자열")
+        문자열.index("n")
+        문자열.find("n")
+        문자열.count("n")
 2021년 8월 10일 
     변수 공부(Python_Parameter.py)
         변수를 출력할 때, 문자형 변수는 그대로 출력가능하다.
