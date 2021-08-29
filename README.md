@@ -5,6 +5,35 @@ PythonBaisc
                 nadocoding.tistory.com
 
 작업내용
+2021년 8월 29일
+    조건문if(Python_If.py)
+        1. 조건문 if를 사용할 경우에는 if를 기준으로 공백(스페이스) 4칸씩 들여쓰기를 해야한다.
+        2. 조건 뒤에는 :을 붙여준다.
+            문법 -> if 조건:
+                       출력문
+        3. 들여쓰기를 하는동안엔 조건문의 출력문이 된다.
+        4. else if 를 줄여서 elif로 작성한다.(이외의 조건 elif는 여러번 사용 가능하다.)
+        5. 어느 조건에도 만족하지 않는 값을 출력할 때는 else로 출력.
+    반복문for(Python_For_Loop.py)
+        1. for문의 문법 
+            for문 최후방에 :을 작성한다.
+            for 변수 in 반복대상:
+                실행명령문1
+        2. if문과 동일하게 for문에서 실행 코드는 들여쓰기이후 작성한다.
+    반복문while(Python_While_Loop.py)
+        1. while문의 문법
+            while boolean
+                실행명령문1
+        2. boolean가 false일때까지 반복문을 실행
+    반복문제어(Python_ContinueBreak.py)
+        1. continue
+            더 이상 아래 명령들을 실행하지 않고 다음 반복 대상으로 넘어갈 경우 사용
+        2. break
+            즉시 반복문을 탈출하는데 사용
+    한줄반복문for(Python_ForOneLoop.py)
+        1. 한 줄 for문의 예시
+            정의하고자하는변수명 = [실행명령문 for 집합(배열)에서 한개씩 습득하여 임시저장할 변수명(i) in 가공할변수명]
+            단순한 반복문의 경우 한줄 for을 이용하는 것도 좋다.
 2021년 8월 23일
     사전(Python_Dictionary.py)
         1. 사전형

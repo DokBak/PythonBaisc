@@ -21,3 +21,4 @@ comm + ] : 들여쓰기
 comm + [ : 내어쓰기
 comm + / : 주석
 
+control + C : 디버그중 강제종료
