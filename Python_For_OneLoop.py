@@ -28,6 +28,8 @@ print(students) #[101,102,103,104,105]
 # 반복대상인 students리스트에서 하나씩 값으 가져와서 i라는 변수에 저장하고, 
 # 그 변수를 활용하여 i + 100이라는 명령을 실행한 값드을 새로운 리스트로 만들어서 students에 집어 넣는 의미 
 
+
+
 # students = [i+100 for i in students]
 # 한 줄 for문의 예의 값을 조금더 풀어서 작성하면 
 # students = [students[0] + 100, students[1] + 100, students[2] + 100, students[3] + 100, students[4] + 100]
