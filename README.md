@@ -5,6 +5,9 @@ PythonBaisc
                 nadocoding.tistory.com
 
 작업내용
+2021년 9월 1일 
+    퀴즈5(Python_Quiz5.py)
+        랜덤함수, 반복문, 조건문의 사용방법에 대해 생각해볼수 있는 문제.
 2021년 8월 29일
     조건문if(Python_If.py)
         1. 조건문 if를 사용할 경우에는 if를 기준으로 공백(스페이스) 4칸씩 들여쓰기를 해야한다.
