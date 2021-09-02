@@ -5,9 +5,43 @@ PythonBaisc
                 nadocoding.tistory.com
 
 작업내용
-2021년 9월 1일 
+
+2021년 9월 3일
+    함수(Python_Function.py)
+        함수를 정의하여 사용 방법에 대하여 공부
+        기본 구조
+            def 함수이름():
+                실행 명령문1
+    함수의_파라미터_리턴값(Python_Function_Input_Output.py)
+        함수를 정의할 때 파라미터, 리턴값을 설정가능하다.
+        이 때 튜플의 형식으로도 리턴값을 줄 수도 있다.
+    기본값 설정(Python_Default_Value.py)
+        함수정의 할 때, 파라미터에 초기값을 설정하면 함수를 사용시 초기값이 있는 파라미터에는 값을 설정하지 않아도 기본값으로써 함수가 출력된다.
+        예시)
+            def profile(name, age, main_lang):
+            print("이름 : {0}\t나이 : {1}\t주 사용 언어 : {2}".format(name, age, main_lang))
+    키워드인자(Python_Keyword_Factor.py)
+        순서에 구애받지 않으면서, 기본 값을 쓰고 필요한 부분만 콕 찍어서 값을 전달 할 경우 사용한다.
+        예시)
+            def profile(name, age, main_lang):
+            print(name, age, main_lang)
+            profile(name = "유재석", main_lang="파이썬", age = 20) # 유재석씨(20세)의 주 사용 언어는 파이썬
+    가변인자(Python_Variable_Factor.py)
+        1. 일반 함수 작성방법은 동일.
+        2. 파라미터를 가변인자로 사용하고 싶을 경우에는 파라미터 앞에 * 를 추가한다.
+        3. 가변인자의 경우는 배열로써 취급하여 실행명령문을 작성한다.
+                # print(type(language)) #tuple
+                for lang in language:
+                    print(lang,end=" ") #언어들을 모두 한 줄에 표시
+               print() # 주바꿈 목적
+    지역변수,전역변수(Python_Local_Global_Variable.py)
+        전역변수 : 함수 밖에 정의 된 변수
+        지역변수 : 함수 내부에 정의 된 변수
+
+2021년 9월 2일 
     퀴즈5(Python_Quiz5.py)
         랜덤함수, 반복문, 조건문의 사용방법에 대해 생각해볼수 있는 문제.
+
 2021년 8월 29일
     조건문if(Python_If.py)
         1. 조건문 if를 사용할 경우에는 if를 기준으로 공백(스페이스) 4칸씩 들여쓰기를 해야한다.
@@ -37,6 +71,7 @@ PythonBaisc
         1. 한 줄 for문의 예시
             정의하고자하는변수명 = [실행명령문 for 집합(배열)에서 한개씩 습득하여 임시저장할 변수명(i) in 가공할변수명]
             단순한 반복문의 경우 한줄 for을 이용하는 것도 좋다.
+
 2021년 8월 23일
     사전(Python_Dictionary.py)
         1. 사전형
