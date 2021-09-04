@@ -41,10 +41,21 @@ print("sqrt(16) : ",sqrt(16))
 #import math로도 선언가능하다.
 
 import math
-
 print("import math")
 print("로 출력될 경우는 함수를 사용할때 모듈명도 같이 작성해주어야한다.")
 
 print("math.floor(4.78) : ",math.floor(4.78))
 print("math.ceil(3.22) : ",math.ceil(3.22))
 print("math.sqrt(16) : ",math.sqrt(16))
+
+
+# 2021년 9월 4일 추가 내용 
+# 기존의 round함수는 단순 실수를 정수형으로 변경시 반올림이 된다 정도로만 공부하였는데 파라미터를 하나 더 추가함으로써 원하는 자릿수에서 반올림이 가능하다.
+
+testData = 12345.746
+print(round(testData))   # 12346 
+print(round(testData,1)) # 12345.7
+print(round(testData,2)) # 12345.75
+print(round(testData,3)) # 12345.746
+print(round(testData,-1))# 12350.0 역으로 반올림으 실행한 경우에는 .0 이 남아 실수형으로 출력된다.
+print(round(testData,-2))# 12300.0 역으로 반올림으 실행한 경우에는 .0 이 남아 실수형으로 출력된다.
