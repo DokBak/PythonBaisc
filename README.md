@@ -5,6 +5,28 @@ PythonBaisc
                 nadocoding.tistory.com
 
 작업내용
+2021년 9월 6일     
+    With(Python_With.py)
+        1. 기존의 파일 입출력 형식을 기준으론 파일열기, 파일데이터작업, 파일닫기의 공정을 한번에 처리가능하게 간소화시킨다.
+        2. with 문법
+            with 작업 as 변수명:
+                실행명령문1
+                실행명령문2
+           예) 
+            with open("x.txt","w",encoding="utf8") as tt
+                tt.write("txt추가")
+    퀴즈7(Python_Quiz7.py)
+        반복문과 함께 다양한 출력포멧을 복습해보았다.
+    클래스(Python_Class.py)
+        1. 동일한 내용의 코드를 반복적으로 사용해야 할 경우에 클래스를 활용한다.
+        class 클래스명:
+            def 메소드1(self, 전달값1, 전달값2,...):
+                실행명령문1
+                실행명령문2
+            def 메소드2(self, 전달값1, 전달값2,...):
+                실행명령문1
+                실행명령문2
+        2. 클래스를 통해서 만들어지는 것을 객체(Object)라 표현하며, 이 객체는 클래스의 인스턴스(Instance)가 된다.
 
 2021년 9월 5일
     피클(Python_Pickle.py)
