@@ -1,10 +1,40 @@
 # PythonBaisc
 PythonBaisc
 
+작업 환경
+    1. OS        : macOS Big Sur 11.5.2
+    2. 언어        : Python  3.9.7
+    3. IDE(편집기) : VS CODE 
+
 공부 자료 출처 : 유투브 "나도코딩" 
                 nadocoding.tistory.com
 
 작업내용
+2021년 9월 11일
+    퀴즈8(Python_Quiz8.py)
+        1. 클래스로 인스턴스를 만들어 한번에 관리 하고자 할때는 배열에 넣어서 일괄처리한다. 
+        2. 변수 = [] # 배열선언해서 append()로 배열에 값을 넣는다.
+        3. 메서드 자체에 출력문이 있는데, 이것을 다시 출력문으로 감싸면 None값이 출력되기도 한다.
+    예외처리(Python_Except.py)
+        1. 예외 처리 문법
+            try: 
+                실행명령문1
+            except 에러 종류1:
+                예외 처리 명령문1
+            (catch부분을 except으로 작성하는듯 싶다.)
+        2. 에러 종류를 지정할수도 있지만 Exception으로 지정하면 모든 예외를 처리가능하다.
+        3. 에러 종류뒤에 as err를 작성함으로써 발생한 에러가 어떤 에러인지 출력 할 수도 있다.
+    에러발생시키기(Python_Except_Raise.py)
+        1. 에러 발생시키기 문법
+            raise 에러종류
+            (raise뒤에 에러종류를 입력해두면 해당 에러가 강제적으로 에러를 발생시킨다.)
+    사용자 정의 예외처리(Python_Except_Custom.py)
+        1. 사용자 정의 예외처리를 사용하고 싶다면, 새롭게 만들 예외의 클래스를 만들어서 Exception을 상속 받아 정의 하면 된다.
+    파이널(Python_Except_Finally.py)
+        1. try except 구문을 진행한 후 반드시 실행되는 부분이 finally부분이다.
+    퀴즈9(Python_Quiz9.py)
+        예외 처리에 대해서 복습을 할 수 있는 예제 
+
 2021년 9월 10일 
     메소드 오버라이딩(Python_Method_Overriding.py)
         1. 부모 클래스에 있는 메서드를 자식클래스에서 새롭게 재정의하여 사용하는 것
@@ -30,7 +60,7 @@ PythonBaisc
         4. isinstance(변수명, 인스턴스명) 
             출력값은 boolean값이며, 변수가 인스턴스일 경우 True를 반환한다.
             리스트에 다양한 인스턴스가 들어가 있는 경우에 각각을 제어 하기에 좋다.
-             
+
 2021년 9월 9일
     다중상속(Python_Multi_Inherit.py)
         1. 상속은 하나의 부모만을 받는 것이 아닌 여러 부모클래스를 상속받아 사용가능하다.
