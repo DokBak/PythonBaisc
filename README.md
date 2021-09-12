@@ -10,6 +10,42 @@ PythonBaisc
                 nadocoding.tistory.com
 
 작업내용
+2021년 9월 13일 
+    파이썬패키지검색(Python_Package_Search.py)
+        1. 파이선의 패키지를 검색해서 다운로드를 하기 위해선 pip를 사전에 설치를 해주어야 한다.(공식 파이썬 사이트에서 파이썬을 설치할 경우pip를 찾지 못하는 경우가 있다.)
+        2. 패키지 검색 사이트(https://pypi.org)에서 원하는 패키지를 검색해서 사용가능하다.
+        3. 다운로드 시에는 터미널에 해당 패키지 내용을 입력해 다운로드한다. pip install [패키지]
+    내장함수(Python_Built_In_Function.py)
+        1. 별도의 import를 하지 않고도 사용할 수 있도록 내장되어 있는 함수를 말한다.
+        2. dir() : 전달값을 입력하지 않고 사용하면 현재 소스코드 범위 내에서 사용가능한 모듈 또는 객체가 출력된다.
+                   전달값으로 어떤 객체, 모듈을 넘기면 그 객체가 어떤 변수와 함수를 가지고 있는지 알려준다.
+        3. 구글에 list of python builtins로 검색하면 나오는 파이썬 공식 홈페이지에서 자세한 내용을 확인가능하다.
+            사이트 : https://docs.python.org/3/library/functions.html
+    외장함수(Python_Built_Out_Function.py)
+        1. 내장 함수와 달리 import를 해야 사용가능한 모듈을 말한다.
+        2. glob
+            glob() : 작업공간내의 파일을 검색
+        3. os
+            getcwd() : 현재 디렉토리
+            path.exists() : 전달값 폴더명이 존재하는지 판단
+            makedirs() : 전달값 이름의 폴더를 생성
+            rmdir() : 전달값 이름의 폴더를 삭제
+            listdir() : 현재 작업 디렉토리 내의 폴더와 파일 목록을 출력
+        4. time
+            localtime() : 현지의 시간을 출력(알아보기 힘들다...)
+            strftime() : 지정된 형식으로 시간이 출력된다.
+                %Y : 연
+                %m : 월
+                %d : 일
+                %H : 시
+                %M : 분
+                %S : 초
+        5. datetime
+            date.today() : 오늘의 날짜(연도-월-일)형식으로 출력된다.
+            timedelta() : 지정된 날짜만큼 계산할 날짜를 저장한다.
+    퀴즈10(Python_Quiz10.py)
+        byme.py 파일을 만들어 사용할 Python_Quiz10.py에서 import 후 함수를 실행.
+        
 2021년 9월 12일
     모듈(Python_Module.py)
         1. 모듈이란  C#에서 dll과 같은 것.
