@@ -10,6 +10,35 @@ PythonBaisc
                 nadocoding.tistory.com
 
 작업내용
+2021년 10월 4일
+    파이썬 exe파일 생성
+        1. pyinstaller 설치
+            - pip install pyinstaller
+        2. pyinstaller ‘.\파일명.py’
+            - ‘’은 생략해도 되나 공백이 있는 경우에는 따옴표가 필수
+            - 옵션 없이 작성시에는 exe 파일을 실행시키기위한 모든 파일들도 생성되게 된다.
+        3. pyinstaller -F ‘.\파일명.py’
+            - 옵션을 -F을 작성하면 exe파일하나로 압축 생성되어진다.
+        4. pyinstaller -w ‘.\파일명.py’
+            - 옵션을 -w을 작성하면 윈도우 프로그램으로 인식하여 GUI 프로그램으로 인식한다.
+            - 이때 다른 폴더에 포함된 파일을 참조하는 코드가 있는경우 해당 폴더와 파일을 동일한 경로에 넣어주어야 프로그램이 정상작동한다.
+        5. pyinstaller -w -F ‘.\파일명.py’
+            - 압축된 exe파일을 풀 때의 경로가 매번 바뀌기에 그 문제를 해결하는 내용을 추가 해주어야한다.
+            - 구글에 [pyinstaller add folder with images in exe file] 검색해서 나온 결과는 아래와 같다.
+        		import os
+	        	def resource_path(relative_path):
+		            try:
+		                base_path = sys._MEIPASS
+		            except Exception:
+		                base_path = os.path.abspath(".")
+		            return os.path.join(base_path, relative_path)
+
+            - 위의 코드를 외부 파일을 참조할때 참조 파일등의 경로를 위의 함수를 사용하면 상대경로가 절대경로로 변경되어 적용된다.
+        6. pyinstaller -w —add-data ‘src:dest’ ‘.\파일명.py’
+            - ’src:dest’ 에서 src는 추가할 파일, :는 맥의 경우(;은 윈도우의 경우), dest는 어느 위치에 넣을지 같은경로라면 .으로 입력
+        7. pyinstaller -w —add-data ‘src:dest’  -F ‘.\파일명.py’
+            - 최종적으로 exe파일 하나로 생성되도록하는 프로그램 하는 작업
+
 2021년 9월 13일 
     파이썬패키지검색(Python_Package_Search.py)
         1. 파이선의 패키지를 검색해서 다운로드를 하기 위해선 pip를 사전에 설치를 해주어야 한다.(공식 파이썬 사이트에서 파이썬을 설치할 경우pip를 찾지 못하는 경우가 있다.)
