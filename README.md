@@ -1,15 +1,13 @@
-# PythonBaisc
-PythonBaisc
+# **Python PythonBaisc**
 
-작업 환경
-    1. OS        : macOS Big Sur 11.5.2
-    2. 언어        : Python  3.9.7
-    3. IDE(편집기) : VS CODE 
+## **Development Environment**
+### 1. OS : MacOS Big Sur 11.5.2
+### 2. Language : Python 3.9.7
+### 3. IDE : VS CODE
 
-공부 자료 출처 : 유투브 "나도코딩" 
-                nadocoding.tistory.com
+## Study reference : youtube="nadocoding", blog=nadocoding.tistory.com
 
-작업내용
+## Work
 2021년 10월 4일
     파이썬 exe파일 생성
         1. pyinstaller 설치
