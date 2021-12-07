@@ -7,147 +7,175 @@
 
 ## Study reference : youtube="nadocoding", blog=nadocoding.tistory.com
 
-## Work
+## **Work**
 ### 2021年 10月 4日
-파이썬 exe파일 생성
+#### 파이썬 exe파일 생성
 1. pyinstaller 설치
-''' pip install pyinstaller '''
-        2. pyinstaller ‘.\파일명.py’
-            - ‘’은 생략해도 되나 공백이 있는 경우에는 따옴표가 필수
-            - 옵션 없이 작성시에는 exe 파일을 실행시키기위한 모든 파일들도 생성되게 된다.
-        3. pyinstaller -F ‘.\파일명.py’
-            - 옵션을 -F을 작성하면 exe파일하나로 압축 생성되어진다.
-        4. pyinstaller -w ‘.\파일명.py’
-            - 옵션을 -w을 작성하면 윈도우 프로그램으로 인식하여 GUI 프로그램으로 인식한다.
-            - 이때 다른 폴더에 포함된 파일을 참조하는 코드가 있는경우 해당 폴더와 파일을 동일한 경로에 넣어주어야 프로그램이 정상작동한다.
-        5. pyinstaller -w -F ‘.\파일명.py’
-            - 압축된 exe파일을 풀 때의 경로가 매번 바뀌기에 그 문제를 해결하는 내용을 추가 해주어야한다.
-            - 구글에 [pyinstaller add folder with images in exe file] 검색해서 나온 결과는 아래와 같다.
-        		import os
-	        	def resource_path(relative_path):
-		            try:
-		                base_path = sys._MEIPASS
-		            except Exception:
-		                base_path = os.path.abspath(".")
-		            return os.path.join(base_path, relative_path)
+```
+pip install pyinstaller
+```
+2. pyinstaller 옵션 설명1
+```
+pyinstaller ‘.\파일명.py’
+```
+ - ‘’은 생략해도 되나 공백이 있는 경우에는 따옴표가 필수
+ - 옵션 없이 작성시에는 exe 파일을 실행시키기위한 모든 파일들도 생성되게 된다.
+3. pyinstaller 옵션 설명2
+```
+pyinstaller -F ‘.\파일명.py’
+```
+ - 옵션을 -F을 작성하면 exe파일하나로 압축 생성되어진다.
+4. pyinstaller 옵션 설명3
+```
+pyinstaller -w ‘.\파일명.py’
+```
+ - 옵션을 -w을 작성하면 윈도우 프로그램으로 인식하여 GUI 프로그램으로 인식한다.
+ - 이때 다른 폴더에 포함된 파일을 참조하는 코드가 있는경우 해당 폴더와 파일을 동일한 경로에 넣어주어야 프로그램이 정상작동한다.
+5. pyinstaller 옵션 설명4
+```
+pyinstaller -w -F ‘.\파일명.py’
+```
+ - 압축된 exe파일을 풀 때의 경로가 매번 바뀌기에 그 문제를 해결하는 내용을 추가 해주어야한다.
+ - 구글에 [pyinstaller add folder with images in exe file] 검색해서 나온 결과는 아래와 같다.
+```
+import os
+def resource_path(relative_path):
+	try:
+		base_path = sys._MEIPASS
+	except Exception:
+		base_path = os.path.abspath(".")
+	return os.path.join(base_path, relative_path)
+```
+ - 위의 코드를 외부 파일을 참조할때 참조 파일등의 경로를 위의 함수를 사용하면 상대경로가 절대경로로 변경되어 적용된다.
+6. pyinstaller 옵션 설명5
+```
+pyinstaller -w —add-data ‘src:dest’ ‘.\파일명.py’
+```
+ - ’src:dest’ 에서 src는 추가할 파일, :는 맥의 경우(;은 윈도우의 경우), dest는 어느 위치에 넣을지 같은경로라면 .으로 입력
+7. pyinstaller 옵션 설명6
+```
+pyinstaller -w —add-data ‘src:dest’  -F ‘.\파일명.py’
+```
+ - 최종적으로 exe파일 하나로 생성되도록하는 프로그램 하는 작업
 
-            - 위의 코드를 외부 파일을 참조할때 참조 파일등의 경로를 위의 함수를 사용하면 상대경로가 절대경로로 변경되어 적용된다.
-        6. pyinstaller -w —add-data ‘src:dest’ ‘.\파일명.py’
-            - ’src:dest’ 에서 src는 추가할 파일, :는 맥의 경우(;은 윈도우의 경우), dest는 어느 위치에 넣을지 같은경로라면 .으로 입력
-        7. pyinstaller -w —add-data ‘src:dest’  -F ‘.\파일명.py’
-            - 최종적으로 exe파일 하나로 생성되도록하는 프로그램 하는 작업
-
-2021년 9월 13일 
-    파이썬패키지검색(Python_Package_Search.py)
-        1. 파이선의 패키지를 검색해서 다운로드를 하기 위해선 pip를 사전에 설치를 해주어야 한다.(공식 파이썬 사이트에서 파이썬을 설치할 경우pip를 찾지 못하는 경우가 있다.)
-        2. 패키지 검색 사이트(https://pypi.org)에서 원하는 패키지를 검색해서 사용가능하다.
-        3. 다운로드 시에는 터미널에 해당 패키지 내용을 입력해 다운로드한다. pip install [패키지]
-    내장함수(Python_Built_In_Function.py)
-        1. 별도의 import를 하지 않고도 사용할 수 있도록 내장되어 있는 함수를 말한다.
-        2. dir() : 전달값을 입력하지 않고 사용하면 현재 소스코드 범위 내에서 사용가능한 모듈 또는 객체가 출력된다.
-                   전달값으로 어떤 객체, 모듈을 넘기면 그 객체가 어떤 변수와 함수를 가지고 있는지 알려준다.
-        3. 구글에 list of python builtins로 검색하면 나오는 파이썬 공식 홈페이지에서 자세한 내용을 확인가능하다.
-            사이트 : https://docs.python.org/3/library/functions.html
-    외장함수(Python_Built_Out_Function.py)
-        1. 내장 함수와 달리 import를 해야 사용가능한 모듈을 말한다.
-        2. glob
-            glob() : 작업공간내의 파일을 검색
-        3. os
-            getcwd() : 현재 디렉토리
-            path.exists() : 전달값 폴더명이 존재하는지 판단
-            makedirs() : 전달값 이름의 폴더를 생성
-            rmdir() : 전달값 이름의 폴더를 삭제
-            listdir() : 현재 작업 디렉토리 내의 폴더와 파일 목록을 출력
-        4. time
-            localtime() : 현지의 시간을 출력(알아보기 힘들다...)
-            strftime() : 지정된 형식으로 시간이 출력된다.
-                %Y : 연
-                %m : 월
-                %d : 일
-                %H : 시
-                %M : 분
-                %S : 초
-        5. datetime
-            date.today() : 오늘의 날짜(연도-월-일)형식으로 출력된다.
-            timedelta() : 지정된 날짜만큼 계산할 날짜를 저장한다.
-    퀴즈10(Python_Quiz10.py)
-        byme.py 파일을 만들어 사용할 Python_Quiz10.py에서 import 후 함수를 실행.
+### 2021년 9월 13일
+#### 파이썬패키지검색(Python_Package_Search.py)
+ 1. 파이선의 패키지를 검색해서 다운로드를 하기 위해선 pip를 사전에 설치를 해주어야 한다.(공식 파이썬 사이트에서 파이썬을 설치할 경우pip를 찾지 못하는 경우가 있다.)
+ 2. 패키지 검색 사이트(https://pypi.org)에서 원하는 패키지를 검색해서 사용가능하다.
+ 3. 다운로드 시에는 터미널에 해당 패키지 내용을 입력해 다운로드한다. pip install [패키지]
+#### 내장함수(Python_Built_In_Function.py)
+ 1. 별도의 import를 하지 않고도 사용할 수 있도록 내장되어 있는 함수를 말한다.
+ 2. dir() : 전달값을 입력하지 않고 사용하면 현재 소스코드 범위 내에서 사용가능한 모듈 또는 객체가 출력된다. 전달값으로 어떤 객체, 모듈을 넘기면 그 객체가 어떤 변수와 함수를 가지고 있는지 알려준다.
+ 4. 구글에 list of python builtins로 검색하면 나오는 파이썬 공식 홈페이지에서 자세한 내용을 확인가능하다.
+```
+https://docs.python.org/3/library/functions.html
+```
+#### 외장함수(Python_Built_Out_Function.py)
+ 1. 내장 함수와 달리 import를 해야 사용가능한 모듈을 말한다.
+ 2. glob  
+ - glob() : 작업공간내의 파일을 검색
+ 3. os
+ - getcwd() : 현재 디렉토리
+ - path.exists() : 전달값 폴더명이 존재하는지 판단
+ - makedirs() : 전달값 이름의 폴더를 생성
+ - rmdir() : 전달값 이름의 폴더를 삭제
+ - listdir() : 현재 작업 디렉토리 내의 폴더와 파일 목록을 출력
+ 4. time
+ - localtime() : 현지의 시간을 출력(알아보기 힘들다...)
+ - strftime() : 지정된 형식으로 시간이 출력된다.
+ 	- %Y : 연
+ 	- %m : 월
+ 	- %d : 일
+ 	- %H : 시
+ 	- %M : 분
+ 	- %S : 초
+ 5. datetime
+ - date.today() : 오늘의 날짜(연도-월-일)형식으로 출력된다.
+ - timedelta() : 지정된 날짜만큼 계산할 날짜를 저장한다.
+#### 퀴즈10(Python_Quiz10.py)
+ - byme.py 파일을 만들어 사용할 Python_Quiz10.py에서 import 후 함수를 실행.
         
-2021년 9월 12일
-    모듈(Python_Module.py)
-        1. 모듈이란  C#에서 dll과 같은 것.
-        2. 기존 모듈 포함시키는 방법
-            a. import ~
-                모듈명.함수 의 형식으로 사용한다
-            b. from ~ from * 
-                함수 의 형식으로 사용한다. (모듈명 생략가능)
-        3. 사용자 정의 모듈용 파일은 사용하고자 하는 파일과 동일한 경로에 있어야 사용가능하다.(기본 라이브러리 폴더에 있어도 가능한가 보다.)
-        4. 별명 설정(모듈명이나 함수명이 길 경우 재설정하여 사용한다.)
-            a. import ~ as 별명
-                별명.함수 의 형식으로 사용가능하게 만들어준다.
-            b. from ~ from 함수명 as 별명
-                별명 의 형식으로 사용한다. 기존의 함수명을 별명으로 바꿔 사용 가능하다.
-        ?. 모듈_예제(theater_module.py)
-            모듈(Python_Module.py)에서 연습용으로 만든 파일.
-        ?. 사용자 정의 모듈을 사용한 경우에는 __pycache__폴더 및 사용자 정의 파일관련 .pyc파일이 생성된다.         
-    패키지(Python_Package.py)
-        1. 여러 모듈들을 모아 놓은 집합을 패키지라한다. 
-        2. 클래스나 함수를 import할 수 없다. import는 모듈이나 패키지만 가능하다.
-    모든 메서드 참조(Python_All.py)
-        1. 패키지에 참조가능한 모듈을 설정가능하다.
-        2. 패키지에 __init__.py 파일을 만들고 __all__ 변수를 만들어 [사용할 모듈명]을 입력 
-    모듈 직접 실행(Python_Module_Execute.py)
-        1. 패키지의 모듈을 사용할 떄 패키지 모듈에 작성할 내용 
-            if __name__ == "__main__": # 직접 실행되는 경우
-                pass
-            else: # 외부에서 호출되어 실행되는 경우
-                pass 
-        2. 모듈을 직접 실행할 경우와 호출되어 실행할 경우를 나누어 작성 가능하다.
-    패키지, 모듈위치(Python_Package_Module_Location.py)
-        1. 사용하고자하는 패키지나 모듈은 호출하려는 파일과 동일한 경로에 있거나 파이썬라이브러리 폴더에 있어야한다.
-        2. import inspect로 모듈이 저장된 위치를 확인가능하다.
-            inspect.getfile(모듈명)
-        3. 사용자 정의 패키지 파일을 기본 파이썬 라이브러리 폴더에 넣으면 random함수 처럼 모든 파이썬프로젝트에서 사용가능하다.
+### 2021년 9월 12일
+#### 모듈(Python_Module.py)
+ 1. 모듈이란  C#에서 dll과 같은 것.
+ 2. 기존 모듈 포함시키는 방법
+ - import ~
+ 	- 모듈명.함수 의 형식으로 사용한다
+ - from ~ from * 
+        - 함수 의 형식으로 사용한다. (모듈명 생략가능)
+ 3. 사용자 정의 모듈용 파일은 사용하고자 하는 파일과 동일한 경로에 있어야 사용가능하다.(기본 라이브러리 폴더에 있어도 가능한가 보다.)
+ 4. 별명 설정(모듈명이나 함수명이 길 경우 재설정하여 사용한다.)
+ - import ~ as 별명
+ 	- 별명.함수 의 형식으로 사용가능하게 만들어준다.
+ - from ~ from 함수명 as 별명
+ 	- 별명 의 형식으로 사용한다. 기존의 함수명을 별명으로 바꿔 사용 가능하다.
+#### 모듈_예제(theater_module.py)
+ - 모듈(Python_Module.py)에서 연습용으로 만든 파일.
+ - 사용자 정의 모듈을 사용한 경우에는 __pycache__폴더 및 사용자 정의 파일관련 .pyc파일이 생성된다.         
+#### 패키지(Python_Package.py)
+ 1. 여러 모듈들을 모아 놓은 집합을 패키지라한다. 
+ 2. 클래스나 함수를 import할 수 없다. import는 모듈이나 패키지만 가능하다.
+#### 모든 메서드 참조(Python_All.py)
+ 1. 패키지에 참조가능한 모듈을 설정가능하다.
+ 2. 패키지에 __init__.py 파일을 만들고 __all__ 변수를 만들어 [사용할 모듈명]을 입력 
+#### 모듈 직접 실행(Python_Module_Execute.py)
+ 1. 패키지의 모듈을 사용할 떄 패키지 모듈에 작성할 내용
+```
+if __name__ == "__main__": # 직접 실행되는 경우
+    pass
+else: # 외부에서 호출되어 실행되는 경우
+    pass
+```
+ 2. 모듈을 직접 실행할 경우와 호출되어 실행할 경우를 나누어 작성 가능하다.
+#### 패키지, 모듈위치(Python_Package_Module_Location.py)
+ 1. 사용하고자하는 패키지나 모듈은 호출하려는 파일과 동일한 경로에 있거나 파이썬라이브러리 폴더에 있어야한다.
+ 2. import inspect로 모듈이 저장된 위치를 확인가능하다.
+ - inspect.getfile(모듈명)
+ 3. 사용자 정의 패키지 파일을 기본 파이썬 라이브러리 폴더에 넣으면 random함수 처럼 모든 파이썬프로젝트에서 사용가능하다.
 
-2021년 9월 11일
-    퀴즈8(Python_Quiz8.py)
-        1. 클래스로 인스턴스를 만들어 한번에 관리 하고자 할때는 배열에 넣어서 일괄처리한다. 
-        2. 변수 = [] # 배열선언해서 append()로 배열에 값을 넣는다.
-        3. 메서드 자체에 출력문이 있는데, 이것을 다시 출력문으로 감싸면 None값이 출력되기도 한다.
-    예외처리(Python_Except.py)
-        1. 예외 처리 문법
-            try: 
-                실행명령문1
-            except 에러 종류1:
-                예외 처리 명령문1
-            (catch부분을 except으로 작성하는듯 싶다.)
-        2. 에러 종류를 지정할수도 있지만 Exception으로 지정하면 모든 예외를 처리가능하다.
-        3. 에러 종류뒤에 as err를 작성함으로써 발생한 에러가 어떤 에러인지 출력 할 수도 있다.
-    에러발생시키기(Python_Except_Raise.py)
-        1. 에러 발생시키기 문법
-            raise 에러종류
-            (raise뒤에 에러종류를 입력해두면 해당 에러가 강제적으로 에러를 발생시킨다.)
-    사용자 정의 예외처리(Python_Except_Custom.py)
-        1. 사용자 정의 예외처리를 사용하고 싶다면, 새롭게 만들 예외의 클래스를 만들어서 Exception을 상속 받아 정의 하면 된다.
-    파이널(Python_Except_Finally.py)
-        1. try except 구문을 진행한 후 반드시 실행되는 부분이 finally부분이다.
-    퀴즈9(Python_Quiz9.py)
-        예외 처리에 대해서 복습을 할 수 있는 예제 
+### 2021년 9월 11일
+####퀴즈8(Python_Quiz8.py)
+ 1. 클래스로 인스턴스를 만들어 한번에 관리 하고자 할때는 배열에 넣어서 일괄처리한다. 
+ 2. 변수 = [] # 배열선언해서 append()로 배열에 값을 넣는다.
+ 3. 메서드 자체에 출력문이 있는데, 이것을 다시 출력문으로 감싸면 None값이 출력되기도 한다.
+#### 예외처리(Python_Except.py)
+ 1. 예외 처리 문법
+```
+try: 
+	실행명령문1
+except 에러 종류1:
+	예외 처리 명령문1
+(catch부분을 except으로 작성하는듯 싶다.)
+```
+ 2. 에러 종류를 지정할수도 있지만 Exception으로 지정하면 모든 예외를 처리가능하다.
+ 3. 에러 종류뒤에 as err를 작성함으로써 발생한 에러가 어떤 에러인지 출력 할 수도 있다.
+#### 에러발생시키기(Python_Except_Raise.py)
+ 1. 에러 발생시키기 문법
+```
+raise 에러종류
+(raise뒤에 에러종류를 입력해두면 해당 에러가 강제적으로 에러를 발생시킨다.)
+```
+#### 사용자 정의 예외처리(Python_Except_Custom.py)
+ 1. 사용자 정의 예외처리를 사용하고 싶다면, 새롭게 만들 예외의 클래스를 만들어서 Exception을 상속 받아 정의 하면 된다.
+#### 파이널(Python_Except_Finally.py)
+ 1. try except 구문을 진행한 후 반드시 실행되는 부분이 finally부분이다.
+#### 퀴즈9(Python_Quiz9.py)
+ - 예외 처리에 대해서 복습을 할 수 있는 예제 
 
-2021년 9월 10일 
-    메소드 오버라이딩(Python_Method_Overriding.py)
-        1. 부모 클래스에 있는 메서드를 자식클래스에서 새롭게 재정의하여 사용하는 것
-    패스(Python_Pass.py)
-        1. 함수뿐만아니라 if, for, while등에서도 pass를 사용하여 당장의 세부 동작을 정의 하지 않은 채 둿다가 나중에 다시 코드를 완성하도록 할 수 있다.
-    슈퍼클래스(Python_Super.py)
-        1. 부모클래스의 이름을 직접 적지않고 super()를 사용하여 부모클래스에 접근이 가능하다.
-        2. super()클래스를 사용한 경우에는 self를 제외한다.
-        3. 상속받은 클래스가 다수 있고, 각 부모클래스에 각각 접근하고자 할때는 부모클래스의 이름을 적고 접근해야한다.
-        4. 상속받은 클래스가 다수 있고, super()를 사용한 경우에는 제일 먼저 상속 받은 부모클래스에 접근하게된다.
-    슈퍼클래스 설명코드(Python_Super_Exam.py)
-        1. 슈퍼클래스(Python_Super.py)에서 공부한 3, 4 내용을 이해하기 위한 코드작성 
-    스타크래프트 전반(Python_Starcraft_FirstHalf.py)
-        1. 각 클래스별 공통기능에 대하여 생각해보고 어떻게 상속하여 각 유닛 클래스까지 만드는 과정을 생각해보는 시간!
+### 2021년 9월 10일 
+#### 메소드 오버라이딩(Python_Method_Overriding.py)
+ 1. 부모 클래스에 있는 메서드를 자식클래스에서 새롭게 재정의하여 사용하는 것
+#### 패스(Python_Pass.py)
+ 1. 함수뿐만아니라 if, for, while등에서도 pass를 사용하여 당장의 세부 동작을 정의 하지 않은 채 둿다가 나중에 다시 코드를 완성하도록 할 수 있다.
+#### 슈퍼클래스(Python_Super.py)
+ 1. 부모클래스의 이름을 직접 적지않고 super()를 사용하여 부모클래스에 접근이 가능하다.
+ 2. super()클래스를 사용한 경우에는 self를 제외한다.
+ 3. 상속받은 클래스가 다수 있고, 각 부모클래스에 각각 접근하고자 할때는 부모클래스의 이름을 적고 접근해야한다.
+ 4. 상속받은 클래스가 다수 있고, super()를 사용한 경우에는 제일 먼저 상속 받은 부모클래스에 접근하게된다.
+#### 슈퍼클래스 설명코드(Python_Super_Exam.py)
+ 1. 슈퍼클래스(Python_Super.py)에서 공부한 3, 4 내용을 이해하기 위한 코드작성 
+####스타크래프트 전반(Python_Starcraft_FirstHalf.py)
+ 1. 각 클래스별 공통기능에 대하여 생각해보고 어떻게 상속하여 각 유닛 클래스까지 만드는 과정을 생각해보는 시간!
     스타크래프트 후반(Python_Starcraft_SecondHalf.py)
         1. 스타크래프트 전반(Python_Starcraft_FirstHalf.py)을 활용하여 만들어둔 클래스를 어떻게 활용해야 하는지 공부하는 시간!
         2. 만들어둔 유닛들을 일괄관리를 하고싶으면 리스트에 넣어서 사용가능하다 
