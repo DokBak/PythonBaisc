@@ -11,7 +11,7 @@
 ### 2021年 10月 4日
 파이썬 exe파일 생성
 1. pyinstaller 설치
-	pip install pyinstaller
+'''pip install pyinstaller'''
         2. pyinstaller ‘.\파일명.py’
             - ‘’은 생략해도 되나 공백이 있는 경우에는 따옴표가 필수
             - 옵션 없이 작성시에는 exe 파일을 실행시키기위한 모든 파일들도 생성되게 된다.
