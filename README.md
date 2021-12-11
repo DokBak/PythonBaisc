@@ -7,6 +7,8 @@
 
 ## Study reference : youtube="nadocoding", blog=nadocoding.tistory.com
 
+## **Python 2,
+
 ## **Work**
 ### 2021년 8월 7일 
  - 프로젝트 생성
