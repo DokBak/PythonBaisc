@@ -7,7 +7,44 @@
 
 ## Study reference : youtube="nadocoding", blog=nadocoding.tistory.com
 
-## **Python 2,
+## **Python 2.x Version VS 3.x Version**
+- python3.x 버전에서는 모드 변수가 객체(object)로 처리됨   
+
+|특징|Python 2|Python 3|보충설명|
+|:---|:---|:---|:---|
+|int의 나눗셈|print(1/2)|print(1/2||
+||print(type(1/2))|print(type(1/2))||
+|결과|0|0.5|python2에서는 나눗셈의 결과가 int타입으로 출력된다.|
+||<type 'int'>|<type 'float'>|python3에서느 나눗셈의 결과가 float타입으로 출력된다.|
+|print문 괄호|print( 'hello' )|print( 'hello' )||
+||print 'hello'|print 'hello'||
+|결과| hello| hello|python2에서는 함수에 ()를 포함하지 않아도 출력이 된다.|
+||hello|Error! invalid syntaxd|python3에서는 함수에 ()를 포함 하지 않는다면 문법오류가 발생한다.|
+|str과unicode|print( type('hello') )|print( type('hello') )||
+||print( type('hello') )|print( type(u'hello') )||
+||print('python'[0])|print('python'[0])||
+||print('python'[:3])|print('python'[:3])||
+||print('파이썬'[0])|print('파이썬'[0])||
+||print('파이썬'[:3])|print('파이썬'[:3])||
+|결과|<type 'str'>|<type 'str'>|python2에서는 문자열을 ASCII로 표현|
+||<type 'unicode'>|<type 'unicode'>|python3에서는 문자열을 UNICODE로 표현|
+||p|p|ASCII 문자의 경우, python2에서 정상적으로 출력된다.|
+||pyt|pyt|ASCII 문자의 경우, python3에서 정상적으로 출력된다.|
+||?|파|비 ASCII 문자의 경우, python2에서 정상적으로 출력되지 않는다.|
+||파|파이썬|비 ASCII 문자의 경우, python3에서 정상적으로 출력된다.|
+|long타입|print( 2**30 )|print( 2**30 )||
+||print( type(2**30) )|print( type(2**30) )||
+||print( 2**100 )|print( 2**100 )||
+||print( type(2**100) )|print( type(2**100) )||
+|결과|1073741824|1073741824||
+||<type 'int'>|<type 'int'>||
+||1267650600228229401496703205376|1267650600228229401496703205376||
+||<class 'long'>|<class 'int'>|python3에서는 long타입이 int로 통일되었다.|
+
+ - 참조 자료 
+ 	- https://zetawiki.com/wiki/Python_%EB%B2%84%EC%A0%84_2%EC%99%80_3_%EC%B0%A8%EC%9D%B4
+ 	- https://www.slideshare.net/LeeSeongjoo/2-17395073
+ 	- https://python-future.org/index.html
 
 ## **Work**
 ### 2021년 8월 7일 
