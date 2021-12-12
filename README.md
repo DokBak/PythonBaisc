@@ -1,4 +1,4 @@
-# **Python PythonBaisc**
+# **PythonBaisc**
 
 ## **Development Environment**
 ### 1. OS : MacOS Big Sur 11.5.2
